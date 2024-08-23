@@ -1,29 +1,26 @@
 version: '3.8'
-service:
+services:
   movies:
-    image: aquil294/paymovies:latest
+    image: hpakala53/paytmmovies:latest
     ports:
       - "81:80"
     deploy:
       replicas: 3
-
-    train:
-     image: aquil294/paytrain:latest
-     ports:
-       - "82:80"
-     depoy:
-       replicas: 3
-
-    dth:
-     image: aquil294/paydth:latest
-     ports:
-       - "83:80"
-     deploy:
-       replicas: 3
-
-    reacharge:
-      image: aquil294/payreacharge:latest
-      ports:
-        - "84:80"
-      deploy:
-        replicas: 3
+  train:
+    image: hpakala53/paytmtrain:latest
+    ports:
+      - "82:80"
+    deploy:
+      replicas: 3
+  dth:
+    image: hpakala53/paytmdth:latest
+    ports:
+      - "83:80"
+    deploy:
+      replicas: 3
+  recharge:
+    image: hpakala53/paytmrecharge:latest
+    ports:
+      - "84:80"
+    deploy:
+      replicas: 3
